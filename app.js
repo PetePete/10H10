@@ -2,11 +2,8 @@
 var start = new Date();
 var hrstart = process.hrtime();
 
-const check = (aCombination) => {
+const check = (sItem) => {
 
-    var sItem = aCombination;//aCombination.join("");
-
-    //var iRest1 = sItem[0] % 1;
     var iRest2 = (sItem[0] + sItem[1]) % 2;
     if (iRest2 !== 0)
         return false;
@@ -35,7 +32,6 @@ const check = (aCombination) => {
     return true;
 }
 
-
 const str = "123456789";
 const permute = (str = "") => {
     if (!!str.length && str.length < 2) {
@@ -56,34 +52,6 @@ const permute = (str = "") => {
     return arr
 }
 var aAllCombinations = permute(str);
-
-// const permutator = (aInput) => {
-//     let result = [];
-
-//     const permute = (arr, m = []) => {
-//         if (arr.length === 0) {
-
-//             if (check(m)) {
-//                 console.log(m.join(""));
-//                 result.push(m);
-//             }
-//         } else {
-//             for (let i = 0; i < arr.length; i++) {
-//                 let curr = arr.slice();
-//                 let next = curr.splice(i, 1);
-//                 permute(curr.slice(), m.concat(next))
-//             }
-//         }
-//     }
-
-//     permute(aInput);
-
-//     return result;
-// }
-
-//var aNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-//var aAllCombinations = permute(aNumbers);
-
 var aResult = [];
 
 for(var i = 0; i < aAllCombinations.length; i++) {
